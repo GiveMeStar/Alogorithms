@@ -3,9 +3,15 @@ package Alogorithms;
 
 public class MaximumSubArray {
 
+
+    public int[] findMaximum(int A[]) {
+        int[] data = findMaximum(A, 0, A.length - 1);
+        return data;
+    }
+
     public int[] findMaximum(int A[], int low, int high) {
-        int[] data = new int[3];
         if (low == high) {
+            int[] data = new int[3];
             data[0] = low;
             data[1] = high;
             data[2] = A[low];
@@ -42,7 +48,7 @@ public class MaximumSubArray {
         for (int i = mid + 1; i <= high; i++) {
             sum = sum + A[i];
             if (sum > rightSum) {
-                leftSum = sum;
+                rightSum = sum;
                 value[1] = i;
             }
         }
