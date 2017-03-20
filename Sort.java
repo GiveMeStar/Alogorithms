@@ -54,4 +54,34 @@ public class Sort {
             }
         }
     }
+
+    //快速排序
+    public void quickSort(int[] A, int p, int q) {
+        if (p < q) {
+            int r = partition(A, p, q);
+            quickSort(A, p, r-1);
+            quickSort(A, r+1, q);
+        }
+    }
+
+    public void quickSort(int[] A) {
+        quickSort(A, 0, A.length-1);
+    }
+
+    //快速排序排序
+    private int partition(int[] A, int p, int q){
+        int x = A[q];
+        int i = p;
+        for (int j = p; j < q; j++) {
+            if (A[j] <= x) {
+                int tmp = A[i];
+                A[i] = A[j];
+                A[j] = tmp;
+                i += 1;
+            }
+        }
+        A[q] =  A[i];
+        A[i] = x;
+        return i;
+    }
 }
