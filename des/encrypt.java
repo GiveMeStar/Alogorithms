@@ -61,8 +61,6 @@ public class encrypt {
                 feedback = com.mergeBytes(Arrays.copyOfRange(result, 4, 8), blockPart);
                 result = com.mergeBytes(temp1, temp2);
             }
-            //System.out.println("RESULT: ");
-            //printBytes(result);
             for (j = 0 ; j < 8 && k < cipher.length; j++, k++) {
                 cipher[k] = result[j];
             }
@@ -83,13 +81,5 @@ public class encrypt {
         byte[] one = crypt.crypt(message, key, method);
         System.out.print(com.getString(one));
 
-//        byte[] key = com.hexStringToByteArray("0B3CB15919F19714");
-//        byte[] message = com.hexStringToByteArray("0B3CB15919F19713");
-//        byte[] pass = com.hexStringToByteArray("DFAE8EEA76946A3C");
-//        encrypt crypt = new encrypt();
-//        byte[] one = crypt.crypt(message, key, "encrypt");
-//        byte[] two = crypt.crypt(pass, key, "decrypt");
-//        System.out.println(com.getString(one));
-//        System.out.println(com.getString(two));
     }
 }
