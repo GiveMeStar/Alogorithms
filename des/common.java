@@ -157,6 +157,12 @@ public class common {
         return out;
     }
 
+
+    /**
+     * @param in1
+     * @param in2
+     * @return
+     */
     public byte[] mergeBytes(byte[] in1, byte[] in2) {
         byte[] out = new byte[in1.length + in2.length];
         int i = 0;
