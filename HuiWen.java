@@ -1,6 +1,5 @@
 package Alogorithms;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HuiWen {

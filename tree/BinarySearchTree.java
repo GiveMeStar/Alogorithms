@@ -5,6 +5,7 @@ import java.nio.BufferUnderflowException;
 public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
 
     private static class BinaryNode<AnyType> {
+
         BinaryNode(AnyType theElement){ this(theElement, null, null); }
 
         BinaryNode(AnyType theElement, BinaryNode<AnyType> lt, BinaryNode<AnyType> rt) {
@@ -59,6 +60,8 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         }
     }
 
+
+    //后序输出
     private void printBTree(BinaryNode<AnyType> t) {
         if (t != null) {
             System.out.println(t.element);
@@ -67,6 +70,8 @@ public class BinarySearchTree<AnyType extends Comparable<? super AnyType>> {
         }
     }
 
+
+    //先序输出
     private void printATree(BinaryNode<AnyType> t) {
         if (t != null) {
             printATree(t.right);
