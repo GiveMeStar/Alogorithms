@@ -19,12 +19,20 @@ public class SteelCut {
 //        System.out.println(SteelCut.extendedBottomUpCutRod(10));
     }
 
+    /**
+     * 自底向上法
+     * 将子问题按规模排序，按由小至大的顺序进行求解
+     * @param n
+     * @return
+     */
     public static ArrayList<SN> extendedBottomUpCutRod(int n) {
         ArrayList<SN> arrayList = new ArrayList();
         arrayList.add(new SN(0, 0));
+        //按升序求解规模为j的子问题
         for (int j = 1; j <= n; j++) {
             int q = Integer.MIN_VALUE;
             int l = 0;
+            //在以求的规模中寻找最优解 并记录
             for (int i = 1; i <= j; i++) {
                 if (q < p[i] + arrayList.get(j - i).s) {
                     q = p[i] + arrayList.get(j - i).s;
