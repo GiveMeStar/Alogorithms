@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * 钢条切割问题
  */
-public class SteelCut {
+public class  SteelCut {
 
     final static int[] p;
 
@@ -14,7 +14,7 @@ public class SteelCut {
     }
 
     public static void main(String[] args) {
-        ArrayList<SN> arrayList = SteelCut.extendedBottomUpCutRod(10);
+        ArrayList<SN> arrayList = SteelCut.extendedBottomUpCutRod(20);
         arrayList.forEach(SN::toString);
 //        System.out.println(SteelCut.extendedBottomUpCutRod(10));
     }
@@ -43,6 +43,28 @@ public class SteelCut {
         }
         return arrayList;
     }
+
+
+    public static int CutRod(int[] p, int n, int[] r) {
+        if (r[n] > Integer.MIN_VALUE) {
+            return r[n];
+        }
+        int q;
+        if (n == 0) {
+            q = 0;
+        } else {
+            q = Integer.MIN_VALUE;
+        }
+
+        for (int i = 0; i < n; i++) {
+            q = Math.max(q, p[i] + CutRod(p, n - 1 , r));
+        }
+        r[n] = q;
+        return q;
+    }
+
+
+
 
 
 }

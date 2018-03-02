@@ -1,23 +1,27 @@
 package Alogorithms.tree;
 
+import java.util.Date;
+import java.util.EnumSet;
+
 public class main {
 
     public static void main(String[] args) {
-//        BinarySearchTree tree = new BinarySearchTree();
-//        Tree tree = new Tree();
-//        int[] temp = {12,34,53,29,18,45,23,64,43,90,8,10,2,5};
-//        char[] temp2 = {'G','D','M','A','F','H','Z','E'};
-//        for (int i = 0; i < 8; i++) {
-//            tree.insert(temp[i]);
+//        SearchTree tree = new SearchTree();
+//
+//        int[] temp = {12,34,53,29,18,45,23,6,64,43,90,8,10,2,5};
+//        for (int i = 0; i < 9; i++) {
+//            tree.treeInsert(temp[i]);
 //        }
-        int x = 1; int y = 4;
-        int z = x ^ y;
-        String temp = Integer.toBinaryString(z);
+//        tree.treeDelete(64);
+//        tree.treeDelete(12);
 
-        int num = 0;
-        for (int i = 0; i < temp.length(); i++) {
-            if (temp.charAt(i) == '1') num++;
+        Long date = new Date().getTime();
+        Long sum = 0L;
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+            sum += i;
         }
-        System.out.print(num);
+
+        System.out.println(new Date().getTime() - date);
+
     }
 }
